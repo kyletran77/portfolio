@@ -1,12 +1,12 @@
 const siteMetadata = {
-  title: 'Kyle Pratap Singh',
-  author: 'Karan Pratap Singh',
-  headerTitle: 'Karan Pratap Singh',
+  title: 'TranDev',
+  author: 'Kyle Tran',
+  headerTitle: 'Kyle Tran',
   description:
-    'A software engineer who values learning and growing with people, teams, and technologies.',
+    'Software Engineer in web and app development. Coding your dreams into reality',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://karanpratapsingh.com',
+  siteUrl: 'https://trandev.net',
   siteRepo: 'https://github.com/karanpratapsingh/portfolio',
   siteLogo: '/static/images/logo.png',
   image: '/static/avatar.jpg',

@@ -1,14 +1,14 @@
 ---
-name: Karan Pratap Singh
-shortname: Karan
+name: Kyle Tran
+shortname: Kyle
 avatar: /static/avatar.jpg
-occupation: Senior Software Engineer
-company: Curebase
+occupation: Full-Stack Engineer @ Tran Dev
+company: TranDev
 resume: /static/Karan_Resume.pdf
-email: contact@karanpratapsingh.com
+email: kyletran77@gmail.com
 twitter: https://twitter.com/karan_6864
-linkedin: https://www.linkedin.com/in/karan99
-github: https://github.com/karanpratapsingh
+linkedin: https://linkedin.com/in/kyle-tran-3395b2161/
+github: https://https://github.com/kyletran77
 ---
 
 A software engineer who values learning and growing with people, teams, and technologies.

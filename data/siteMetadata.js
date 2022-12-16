@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'Karan Pratap Singh',
+  title: 'Kyle Pratap Singh',
   author: 'Karan Pratap Singh',
   headerTitle: 'Karan Pratap Singh',
   description:

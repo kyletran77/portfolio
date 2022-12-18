@@ -7,6 +7,9 @@ import { AuthorFrontMatter } from 'types/AuthorFrontMatter';
 
 // TODO: Direct share functionality.
 // TODO: Switch geist-ui with something simple.
+//add projects
+import config from 'config';
+import Card from '@/components/Card';
 
 // @ts-ignore
 export const getStaticProps: GetStaticProps<{
@@ -33,6 +36,22 @@ export default function Home({
         description={siteMetadata.description}
       />
       <Banner frontMatter={author} />
+      <div className='py-50 container'>
+        <h1 className='text-3xl font-bold dark:text-white lg:text-5xl'>
+          Featured Projects
+        </h1>
+        <div className='-m-4 my-4 flex flex-wrap'>
+          {config.projects.map(({ slug, title, description, banner }) => (
+            <Card
+              key={slug}
+              title={title}
+              description={description}
+              banner={banner}
+              href={`/projects/${slug}`}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 }

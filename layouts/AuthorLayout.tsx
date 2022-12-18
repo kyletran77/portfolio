@@ -28,7 +28,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
               src={avatar}
               alt='avatar'
               width='192px'
-              height='192px'
+              height='250px'
               className='h-48 w-48 rounded-full'
             />
             <h3 className='pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight'>
@@ -49,7 +49,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                 target='_blank'
                 rel='noreferrer'
               >
-                <RoughNotation
+                {/* <RoughNotation
                   show
                   type='box'
                   animationDelay={250}
@@ -58,7 +58,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                   color={resumeColor}
                 >
                   Resume
-                </RoughNotation>
+                </RoughNotation> */}
               </a>
               <h2 className='mt-8 mb-4 text-2xl font-semibold dark:text-white'>
                 Skills

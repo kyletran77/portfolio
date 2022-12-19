@@ -8,66 +8,97 @@ import { ReactNode } from 'react';
 import { RoughNotation } from 'react-rough-notation';
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter';
 
+//new about
+import siteMetadata from '@/data/siteMetadata';
+import PageTitle from '@/components/PageTitle';
+import { renderRule, StructuredText } from 'react-datocms';
+import { isLink } from 'datocms-structured-text-utils';
+import CustomLink from '@/components/CustomLink';
+import SocialIcon from '@/components/SocialIcon';
+import { getAbout } from '@/lib/cms/datocms';
+import { InferGetStaticPropsType } from 'next';
+
 interface Props {
   children: ReactNode;
   frontMatter: AuthorFrontMatter;
 }
 
-export default function AuthorLayout({ children, frontMatter }: Props) {
-  const { name, avatar, occupation, company, resume } = frontMatter;
-  const [resumeColor] = useRandomColorPair();
+export default function AuthorLayout({
+  about,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  // const { name, avatar, occupation, company, resume } = frontMatter;
+  // const [resumeColor] = useRandomColorPair();
+
+  //new about
+  const { name, title, updatedat } = about;
 
   return (
     <>
-      <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
-      <div className='fade-in divide-y-2 divide-gray-100 dark:divide-gray-800'>
-        <Header title='About' />
-        <div className='items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0'>
-          <div className='flex flex-col items-center space-x-2 pt-8'>
-            <Image
-              src={avatar}
-              alt='avatar'
-              width='192px'
-              height='250px'
-              className='h-48 w-48 rounded-full'
-            />
-            <h3 className='pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight'>
-              {name}
-            </h3>
-            <div className='font-medium text-gray-500 dark:text-gray-400'>
-              {occupation}
-            </div>
-            <div className='text-gray-500 dark:text-gray-400'>{company}</div>
+      <PageSEO
+        title={`About - ${siteMetadata.author}`}
+        description={`About me - ${siteMetadata.author}`}
+      />
+      <div className='space-y-2 pt-6 pb-8 md:space-y-5'>
+        <PageTitle>About</PageTitle>
+      </div>
+      <div className='items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0'>
+        <div className='flex flex-col items-center pt-8 xl:sticky xl:top-12 xl:items-start'>
+          {/* <Image
+        src={}
+        width={192}
+        height={192}
+        alt={profilepicture.alt}
+        className="rounded-full xl:rounded-lg"
+        placeholder="blur"
+        blurDataURL={profilepicture.blurUpThumb}
+      /> */}
+          <h3 className='pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight'>
+            {name}
+          </h3>
+          {/* <div className="text-gray-500 dark:text-gray-400">{title}</div> */}
+          <div className='flex space-x-3 pt-6'>
+            <SocialIcon kind='mail' href={`mailto:${siteMetadata.email}`} />
+            <SocialIcon kind='github' href={siteMetadata.github} />
+            <SocialIcon kind='codepen' href={siteMetadata.codepen} />
+            <SocialIcon kind='twitter' href={siteMetadata.twitter} />
           </div>
-
-          <div className='prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2'>
-            {children}
-            <p className='mt-8'>
-              <a
-                className='!font-normal !text-black !no-underline dark:!text-white'
-                href={resume}
-                target='_blank'
-                rel='noreferrer'
-              >
-                {/* <RoughNotation
-                  show
-                  type='box'
-                  animationDelay={250}
-                  animationDuration={2000}
-                  strokeWidth={2}
-                  color={resumeColor}
-                >
-                  Resume
-                </RoughNotation> */}
-              </a>
-              <h2 className='mt-8 mb-4 text-2xl font-semibold dark:text-white'>
-                Skills
-              </h2>
-              <StackList stack={WorkStack} />
-            </p>
-          </div>
+        </div>
+        <div className='prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2'>
+          {/* <StructuredText
+        data={content}
+        customRules={[
+          renderRule(isLink, ({ node }) => (
+            <CustomLink href={node.url}>
+              {node.children.map((child) => {
+                return <child.type key={child.value}>{child.value}</child.type>;
+              })}
+            </CustomLink>
+          )),
+        ]}
+      /> */}
+          {/* <div className="mt-14">
+        <p className="text-gray-300 dark:text-gray-700">
+          Last updated at{" "}
+          <time dateTime={updatedAt}>
+            {new Date(updatedAt).toLocaleDateString(siteMetadata.locale, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+        </p>
+      </div> */}
         </div>
       </div>
     </>
   );
+}
+
+export async function getStaticProps({ preview = true }) {
+  const about = (await getAbout(preview)) || [];
+
+  return {
+    props: { about },
+    revalidate: 60,
+  };
 }

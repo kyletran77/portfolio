@@ -2,6 +2,14 @@ import { MDXLayoutRenderer } from '@/components/MDXComponents';
 import { getFileBySlug } from '@/lib/mdx';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter';
+import { PageSEO } from '@/components/SEO';
+import siteMetadata from '@/data/siteMetadata';
+import Image from 'next/image';
+import PageTitle from '@/components/PageTitle';
+import { renderRule, StructuredText } from 'react-datocms';
+import { isLink } from 'datocms-structured-text-utils';
+import CustomLink from '@/components/CustomLink';
+import SocialIcon from '@/components/SocialIcon';
 
 const DEFAULT_LAYOUT = 'AuthorLayout';
 

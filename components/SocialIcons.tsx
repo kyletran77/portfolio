@@ -44,10 +44,6 @@ function resolveIcon(entry: Tuple<string>): React.ReactNode {
       icon = <LinkedinIcon {...props} />;
       break;
 
-    case ContactType.twitter:
-      icon = <TwitterIcon {...props} />;
-      break;
-
     case ContactType.github:
       icon = <GithubIcon {...props} />;
       break;
@@ -60,9 +56,6 @@ function resolveIcon(entry: Tuple<string>): React.ReactNode {
       icon = <MailIcon {...props} />;
       break;
 
-    case ContactType.buymeacoffee:
-      icon = <BuymeacoffeeIcon {...props} />;
-      break;
     default:
       break;
   }

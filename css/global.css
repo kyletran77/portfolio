@@ -1,4 +1,4 @@
-.fade-in {
+/* .fade-in {
   animation: fade-in ease 500ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -31,4 +31,4 @@
 
 .collapse .view .title {
   @apply dark:text-white;
-}
+} */

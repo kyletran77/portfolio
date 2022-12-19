@@ -36,6 +36,7 @@ export default function Home({
         description={siteMetadata.description}
       />
       <Banner frontMatter={author} />
+
       <div className='py-50 container'>
         <h1 className='text-3xl font-bold dark:text-white lg:text-5xl'>
           Featured Projects

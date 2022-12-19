@@ -16,20 +16,14 @@ const CustomLink = ({
 
   if (isInternalLink || isAnchorLink) {
     return (
-      <Link href={href} className={className} {...rest}>
+      <Link href={href} {...rest}>
         {children}
       </Link>
     );
   }
 
   return (
-    <Link
-      href={href}
-      target='_blank'
-      rel='noopener noreferrer'
-      className={`items-center ${className ? className : ''}`}
-      {...rest}
-    >
+    <Link href={href} rel='noopener noreferrer' {...rest}>
       {children}
       {showIcon && (
         <svg

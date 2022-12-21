@@ -43,7 +43,7 @@ function Banner(): React.ReactElement {
         </h1>
         <div className='space-y-2 md:space-y-5'>
           <PageTitle>
-            Howdy, I am Kyle from Tran Dev{' '}
+            Howdy, I am Kyle Tran{' '}
             <span role='img' aria-label='waving hand' className='wave'>
               👋
             </span>

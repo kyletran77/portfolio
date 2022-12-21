@@ -58,10 +58,9 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
           </h3>
           <div className='text-gray-500 dark:text-gray-400'>{job}</div>
           <div className='flex space-x-3 pt-6'>
-            <SocialIcon kind='mail' href={''} />
-            <SocialIcon kind='github' href={''} />
-            <SocialIcon kind='codepen' href={''} />
-            <SocialIcon kind='twitter' href={''} />
+            <SocialIcon kind='mail' href={`mailto:${siteMetadata.email}`} />
+            <SocialIcon kind='github' href={siteMetadata.github} />
+            <SocialIcon kind='twitter' href={siteMetadata.twitter} />
           </div>
         </div>
         <div className='prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2'>

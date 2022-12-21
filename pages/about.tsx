@@ -8,7 +8,6 @@ import Image from 'next/image';
 import PageTitle from '@/components/PageTitle';
 import { renderRule, StructuredText } from 'react-datocms';
 import { isLink } from 'datocms-structured-text-utils';
-import CustomLink from '@/components/CustomLink';
 import SocialIcon from '@/components/SocialIcon';
 
 const DEFAULT_LAYOUT = 'AuthorLayout';

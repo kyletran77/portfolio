@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://trandev.net',
   siteRepo: 'https://github.com/karanpratapsingh/portfolio',
   siteLogo: '/static/images/logo.png',
-  image: '/static/avatar.jpg',
+  image: '/static/avatar.png',
   socialBanner: '/static/banner.png',
   email: 'contact@karanpratapsingh.com',
   github: 'https://github.com/karanpratapsingh',

@@ -13,11 +13,11 @@ function Card({ title, description, banner, href }): React.ReactElement {
   );
 
   return (
-    <div className='md p-4 md:w-1/2' style={{ maxWidth: '544px' }}>
+    <div className='md p-4 md:w-1/2 ' style={{ maxWidth: '544px' }}>
       <div
         className={`${
           banner && 'h-full'
-        }  overflow-hidden rounded-md border-2 border-gray-100 border-opacity-60 dark:border-gray-800`}
+        }  overflow-hidden rounded-md border-2 hover:border-primary-600 dark:border-gray-800 dark:hover:border-primary-400`}
       >
         {banner &&
           (href ? (
@@ -37,7 +37,7 @@ function Card({ title, description, banner, href }): React.ReactElement {
               title
             )}
           </h2>
-          <p className='prose mb-3 max-w-none text-gray-500 line-clamp-2 dark:text-gray-400'>
+          <p className='line-clamp-2 prose mb-3 max-w-none text-gray-500 dark:text-gray-400'>
             {description}
           </p>
           {href && (
